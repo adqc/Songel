@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>NOTHING</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <h4 class="card-header text-center">Agregar Asesoria</h4>
+                    <div class="card-block">
+                        <form method="post" action="/add">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Curso</label>
+                                <input name="curso" type="text" class="form-control form-control-danger">
+                                {% if messages %}
+                                {%for message in messages %}
+                                {%if "first_name" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Profesor</label>
+                                <input name="profesor" type="text" class="form-control">
+                                {% if messages %}
+                                {%for message in messages %}
+                                {%if "last_name" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Horario</label>
+                                <input name="horario" type="text" class="form-control">
+                                {% if messages %}
+                                {%for message in messages %}
+                                {%if "email" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Lugar</label>
+                                <input name="lugar" type="text" class="form-control">
+                                {% if messages %}
+                                {%for message in messages %}
+                                {%if "password" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="mx-auto text-center">
+                                <input type="submit" value="Agregar" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    </script>
+  </body>
+</html>
